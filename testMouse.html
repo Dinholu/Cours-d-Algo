@@ -1,0 +1,23 @@
+<html>
+   <head>   
+      <script type = "text/javascript">
+            function over() {
+               document.getElementById("bgColor").style="background-color:DodgerBlue;";
+               document.getElementById("texte").textContent="Dessus";
+            }            
+            function out() {
+                document.getElementById("bgColor").style="background-color:Tomato;";
+                document.getElementById("texte").textContent="Pas dessus";
+
+            }            
+      </script>
+   </head>
+   
+   <body style="background-color:white;" id="bgColor">
+
+   <button onmouseover = "over()" onmouseout = "out()"> Ce bouton ne fait rien (pour l'instant) </button>
+   <p id="texte"></p>
+   </body>
+</html>
+
+

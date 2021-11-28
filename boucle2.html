@@ -1,0 +1,21 @@
+<html>
+   <body>
+      <div id="menuSelect">
+
+      </div>
+      
+   <script type="text/javascript">
+      let lesGens=["Bob","Alfred","Gertrude","Cunégonde","Gonzague"];
+      let leMenu="<select>";
+      for (let nom of lesGens) {
+         leMenu=leMenu+"<option>"+nom+"</option>";
+      }
+      leMenu=leMenu+"</select>";
+      //alert(leMenu);
+      document.getElementById("menuSelect").innerHTML=leMenu;
+   </script>
+
+
+   </body>
+</html>
+

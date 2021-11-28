@@ -1,0 +1,14 @@
+let maCollection=["Bob", "Germaine", "Monique", "Ginette", "Johnny", "Jacky"];
+let genre=["M","F","F","F","M","M"];
+let ages = [48,72,52,79,81,39];
+
+
+1) afficher tous les prénoms
+2) calculer et afficher le nombre de prénoms féminins
+3) calculer et afficher la moyenne d'âge
+4) construisez un menu sélect avec sélection multiple des prénoms
+5) affichez la moyenne d'âge des gens sélectionnés
+	Moyenne = somme es âges des gens sélectionnés / nombre de personnes sélectionnées
+			Attention : si nombre == 0 ....
+6 ajoutez 2 checkbox M et F qui permettent de filtrer
+(seuls les éléments sélectionnés sont affichés)

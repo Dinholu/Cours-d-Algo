@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       
+    </head>
+<body>
+    <script type="text/javascript">
+        // 1) Ecrivez sur la ligne en dessous le code pour déclarer une variable voiture, et lui affecter comme valeur la chaine : Aston Martin
+        let voiture = "Aston Martin";
+
+        if (voiture != "Aston Martin") alert("Y a un malaise, bébé");
+        // 2) créez sur les 4 lignes suivantes une fonction maFonction qui execute le code avec votre nom en parametre : alert(votre nom); vous enlèverez les //
+        function maFonction() 
+        {
+            alert("Tellier");
+        } 
+        maFonction();
+    </script>
+<p>1) La question 1 est dans le code source ...</p>
+<p>2) La question 2 aussi ...</p>
+
+<script type = "text/javascript"> 
+function q3() {
+    document.getElementById("q3").textContent="Tellier";
+}
+</script>
+<button id="q3" onclick="q3();">3) Modifier ce bouton pour qu'il affiche votre nom dans le bouton à la place de ce texte quand on clique dessus</button>
+
+<p> </p>
+<script type = "text/javascript"> 
+    function q4() {
+        document.getElementById("q4").style.backgroundColor="#FF0000";
+    }
+    </script>
+<button id="q4" onclick="q4();" >4) Modifiez ce bouton pour qu'il prenne la couleur rouge (#FF0000) quand on clique dessus</button>
+
+<p> </p>
+<script type = "text/javascript"> 
+    let coul="#FF0000";
+    function q5() {
+        document.getElementById("q5").style.backgroundColor=coul;
+        if (coul=="#FF0000") coul = "#00FF00";
+        else coul="#FF0000";
+    }
+    </script>
+<button id="q5" onclick="q5();">5) Modifiez ce bouton pour qu'il change de couleur à chaque fois qu'on clique dessus</button>
+
+<p>Exercice sur les menus d'options</p>
+<select id="select1">
+    <option>Chien</option>
+    <option>Chat</option>
+    <option>Canari</option>
+    <option>Poisson rouge</option>
+    <option>Hamster</option>
+</select>
+
+<p id=q6>6) Faites en sorte que ce texte soit remplacé par le texte : "Nombre d'options", suivi du nombre options du menu précédent</p>
+<script type = "text/javascript"> 
+    document.getElementById("q6").textContent="Nombre d'options : " + document.getElementById("select1").options.length;
+</script>
+<button id="q7" onclick="q7();">7) Modifiez ce bouton pour que quand on clique dessus il affiche avec alert() le nombre d'options du menu précédent </button>
+<script type = "text/javascript"> 
+    function q7() {
+    alert(document.getElementById("select1").options.length);
+}
+</script>
+
+<p>Exercice sur les menus d'options avec selection multiple</p>
+<select multiple="multiple" id="selectFruits" onchange="q9();">
+    <option>Pomme</option>
+    <option>Orange</option>
+    <option>Poire</option>
+    <option>Raisin rouge</option>
+    <option>Abricot</option>
+    <option>Fraise</option>
+    <option>Ananas</option>
+</select>
+<p></p>
+<button onclick="q8();">8) Modifiez ce bouton pour qu'il affiche ci dessous quand on clique dessus le nombre d'options électionnées dans le menu précédent </button>
+<p id="q8">Ce texte doit être remplacé par le texte : "Nombre d'options sélectionnées :", suivi du nombre d'options sélectionnées</p>
+<script type = "text/javascript"> 
+    function q8() {
+        let nbSelect =0;
+        let lesOptions = document.getElementById("selectFruits").options;
+        for (let opt of lesOptions) {
+            if (opt.selected) {
+                nbSelect = nbSelect + 1;
+            }
+        }
+        document.getElementById("q8").textContent = nbSelect;
+}
+</script>
+
+<p>Options séléctionnées :</p>
+<p id="q9">9) Faites en sorte que ce texte soit remplacé par les options sélectionnées</p>
+<script type = "text/javascript"> 
+    function q9() {
+        let texte ="";
+        let lesOptions = document.getElementById("selectFruits").options;
+        for (let opt of lesOptions) {
+            if (opt.selected) {
+                texte = texte + " " + opt.textContent;
+            }
+        }
+        document.getElementById("q9").textContent = texte;
+}
+</script>
+
+<p>CheckBox</p>
+
+<input type="checkbox" id="chckbx1" onclick="q10();">
+<p id="q10">10)Modifiez le comportement de la checkbox ci-dessus pour que ce message soit remplacé par coché ou décoché selon le cas</p>
+<script type = "text/javascript"> 
+    function q10() {
+        if (document.getElementById("chckbx1").checked==true) {
+            document.getElementById("q10").textContent = "coché";
+        }
+        else    {
+            document.getElementById("q10").textContent = "décoché";
+        }
+}
+</script>
+<p>2 input</p>
+Nom : <input type="text" value="nom" id="nom">Prénom : <input type="text" value="prenom" id="prenom">
+<button onclick="q11();">11) Modifiez ce bouton pour qu'il qu'il affiche ci dessous l'adresse mail constituée du nom et du prénom comme suit</button>
+<p id="q11">prenom@nom.com</p>
+<script type = "text/javascript"> 
+    function q11() {
+        document.getElementById("q11").textContent = 
+            document.getElementById("prenom").value + "@" +
+            document.getElementById("nom").value + ".com" ;
+}
+</script>
+
+<p>Boutons radio</p>
+Homme:<input type="radio" name="genre" id="b1" onclick="q12();">
+Femme:<input type="radio" name="genre" id="b2" onclick="q12();">
+Autre:<input type="radio" name="genre" id="b3" onclick="q13();">
+
+<p id="q12">12) Modifiez le code des boutons ci-dessus pour que la valeur sélectionnée soit affichée ici</p>
+<script type = "text/javascript"> 
+    function q12() {
+        if (document.getElementById("b1").checked)
+            document.getElementById("q12").textContent = "Homme";
+        else
+        document.getElementById("q12").textContent = "Femme";
+}
+</script>
+<p>13) idem en ajoutant un 3ème bouton "Autre:"</p>
+<script type = "text/javascript"> 
+    function q13() {
+        if (document.getElementById("b3").checked)
+            document.getElementById("q12").textContent = "Autre";
+}
+</script>
+<p>Une dernière question</p>
+<input type="checkbox" id="cb1">
+<input type="checkbox" id="cb2" onclick="q142();">
+<input type="checkbox" id="cb3" onclick="q143();">
+<input type="checkbox" id="cb4">
+<p>14) Modifiez le code des check box pour que quand on coche ou décoche une checkbox, on permute les valeurs de ses 2 voisines</p>
+<script type = "text/javascript"> 
+    function q142() {
+        document.getElementById("cb1").checked = !document.getElementById("cb1").checked
+        document.getElementById("cb3").checked = !document.getElementById("cb3").checked
+    }
+    function q143() {
+        document.getElementById("cb2").checked = !document.getElementById("cb2").checked
+        document.getElementById("cb4").checked = !document.getElementById("cb4").checked
+    }
+</script>
+</body>
+</html>

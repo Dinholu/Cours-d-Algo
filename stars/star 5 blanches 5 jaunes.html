@@ -1,0 +1,32 @@
+<html>
+   <head>   
+      <!-- <script type = "text/javascript" src="star.js">   </script> -->
+      <script type = "text/javascript" >
+          function toto(i) {
+              alert(i);
+        let yellowstars = "";
+        for (let i=0;i<5;i++) {
+          yellowstars += '<img src="yellowstar.png" height="50" onclick="toto('+i+');">';
+      }
+      document.getElementById("stars").innerHTML=yellowstars;
+      }
+          </script>
+   </head>
+   
+   <body>
+       <div id="stars">
+           
+           </div>
+       
+       <script type = "text/javascript" >
+           let whitestars = "";
+           for (let i=0;i<5;i++) {
+               whitestars += '<img src="whitestar.png" height="50" onclick="toto('+i+');">';
+           }
+           document.getElementById("stars").innerHTML=whitestars;
+            </script>
+
+   </body>
+</html>
+
+

@@ -1,0 +1,29 @@
+<html>
+    <body>
+        <script type="text/javascript">
+            /* Déclaration des variables */
+            let CA; // chiffre d'affaire
+            let RT ; // revenu total du foyer
+            let nbParts ;// nombre de parts fiscales du foyer
+            let prelevementLiberatoirePossible ; // true or false
+            
+            /* initialisation des données */
+            CA = parseInt(prompt("Entrez votre chiffre d'affaire annuel",""));
+            RT = parseInt(prompt("Entrez le revenu total du foyer"));
+            nbParts = parseFloat(prompt("Entrez ne nombre de parts fiscales du foyer",""));
+            
+            /* calcul */
+            if ((CA < 70000) && (RT <= (nbParts * 27794)))
+                prelevementLiberatoirePossible = "Le prélèvement libératoire est possible";
+            else
+                prelevementLiberatoirePossible = "Le prélèvement libératoire n'est pas possible";
+                
+            //prelevementLiberatoirePossible = ((CA < 70000) && (RT <= (nbParts * 27794)));
+            
+            /* affichage des résultats */
+            document.write(prelevementLiberatoirePossible);
+                            
+        </script>
+    </body>
+</html>
+

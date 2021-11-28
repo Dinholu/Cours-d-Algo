@@ -1,0 +1,41 @@
+<html>
+<head>
+    <script type="text/javascript">
+        function tuCliques() {
+            let lesOPtions = document.getElementById("o").options;
+            let N = lesOPtions.length;
+            let nb = 0; // nombre d'options sélectionnées
+            // variante iterateur tous les elements d'une collection
+            for (let uneOption of lesOPtions) {
+                if (uneOption.selected){
+                    nb = nb+1; // ou nb++; ou nb+=1;
+                }  
+            }
+            // autre variante, de type faire N fois
+            nb = 0; // nombre d'options sélectionnées
+            for (let i=0; i<N; i++) {
+                if (lesOPtions[i].selected){
+                    nb = nb+1; // ou nb++; ou nb+=1;
+                }  
+            }
+            let pourcentage = 100*nb/N;
+            document.getElementById("laZone").textContent=pourcentage+"%";
+        }
+</script>
+</head>    
+
+<body><select id="o" multiple="multiple" onchange="tuCliques();">
+    <option>Il fait beau</option>
+    <option>Le café est bon</option>
+    <option>La salle est confortable </option>
+    <option>Les ordis fonctionnent bien </option>
+    <option>L'ambiance du cours est chouette</option>
+    <option>Je veux devenir développeur web</option>
+    <option>Je suis assidu et ponctuel</option>
+    <option>Je travaille pour réussir</option>
+</select>
+
+<p id="laZone"></p>
+</body></html>
+
+

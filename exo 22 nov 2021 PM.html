@@ -1,0 +1,111 @@
+<html>
+	<head>
+		<script type="text/javascript">
+			let maCollection=["Bob", "Germaine", "Monique", "Ginette", "Johnny", "Jacky"];
+			let genres =     ["M",   "F",        "F",       "F",       "M",      "M"];
+			let ages =       [48,    72,         52,        79,        81,       39];
+
+			// 1) afficher tous les prénoms
+			//2) calculer et afficher le nombre de prénoms féminins
+			// 3) calculer et afficher la moyenne d'âge
+			// 4) construisez un menu sélect avec sélection multiple des prénoms
+			// 5) affichez la moyenne d'âge des gens sélectionnés
+			// Moyenne = somme des âges des gens sélectionnés / nombre de personnes sélectionnées
+			// 	Attention : si nombre == 0 ....
+			// 6 ajoutez 2 checkbox M et F qui permettent de filtrer
+			// (seuls les éléments sélectionnés sont activés : disabled)
+
+			function q1() {
+				for (let nom of maCollection)
+					alert(nom);
+			}
+
+			function q2() {
+				let nbPrenomF = 0;
+				for (let genre of genres)
+					if (genre=="F") nbPrenomF++ ;
+				alert("Nombre de prénoms féminins : " + nbPrenomF);
+			}
+
+			function q3() {
+				let lesOptions = document.getElementById("monSelect").options;
+				let somme=0;
+				for (age of ages) 
+						somme = somme+age;
+				let moyenne = somme/lesOptions.length;
+				document.getElementById("parag").textContent="Aucun nom sélectionné";
+			}
+
+			function q4() {
+				for (let nom of maCollection) {
+					let option = document.createElement("option");
+					option.text = nom;
+					document.getElementById("monSelect").add(option);
+				}
+				/* texte="";
+				for (let nom of maCollection) {
+					texte=texte+"<option>"+nom+"</option>";
+				}
+				document.getElementById("monSelect").innerHTML=texte; */		
+			}
+		
+			function q5() {
+				let lesOptions = document.getElementById("monSelect").options;
+				let somme=0;
+				let nbSelected=0;
+				for (let i=0; i< lesOptions.length; i++)
+				{
+					if(lesOptions[i].selected) {
+						nbSelected++;
+						somme = somme+ages[i];
+					}
+				}
+				if (nbSelected>0) {
+					let moyenne = somme/nbSelected;
+					document.getElementById("parag").textContent=moyenne;
+				}
+				else document.getElementById("parag").textContent="Aucun nom sélectionné"
+			}
+			function q6(){
+				let lesOptions = document.getElementById("monSelect").options;
+				for (let i=0; i< lesOptions.length; i++) {
+					if (genres[i]=="F") {
+						if (document.getElementById("F").checked) 
+							lesOptions[i].disabled = false;
+						else lesOptions[i].disabled = true;
+					}
+					else if (genres[i]=="M") {
+						if (document.getElementById("M").checked) 
+							lesOptions[i].disabled = false;
+						else lesOptions[i].disabled = true;
+					}
+				}
+			}
+		</script>
+
+	</head>
+
+	<body onload="q4();">
+		<script type="text/javascript">
+			q1();			
+			q2();
+			q3();
+		</script>
+
+		<select multiple=true id="monSelect" onchange="q5();">
+
+		</select>
+
+
+		<script type="text/javascript">
+			//initMenu();
+			//document.getElementById("monSelect").options[0].disabled=true;
+		</script>
+
+		<p id="parag"></p>
+		<input type="checkbox" id="F" checked onclick="q6();">F<br>
+		<input type="checkbox" id="M" checked onclick="q6();">M
+	</body>
+</html>
+
+

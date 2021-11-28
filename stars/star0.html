@@ -1,0 +1,27 @@
+<html>
+   
+   <head>   
+      <script type = "text/javascript">  
+         var couleurPourLaProchaineFois="jaune" ;
+         function changeImage() {
+            if (couleurPourLaProchaineFois == "jaune") {
+               document.getElementById("image").src="yellowstar.png";
+               couleurPourLaProchaineFois = "blanc";
+            }
+            else {
+               document.getElementById("image").src="whitestar.png";
+               couleurPourLaProchaineFois = "jaune";
+            }
+         }
+      </script>
+   </head>
+   
+   <body>
+      <div id="stars">
+       <img src="whitestar.png" height="50" id="image"
+       onclick="changeImage();">
+      </div>
+   </body>
+</html>
+
+

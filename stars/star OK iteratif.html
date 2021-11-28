@@ -1,0 +1,38 @@
+<html>
+   <head>   
+      <!-- <script type = "text/javascript" src="star.js">   </script> -->
+      <script type = "text/javascript" >
+          function toto(p) {
+              //alert(p);
+        let stars = "";
+        image="yellowstar.png";
+        for (let i=0;i<=p;i++) {
+          stars += '<img src="'+image+'" height="50" onclick="toto('+i+');">';
+      }
+        image = "whitestar.png";
+        for (let i=p+1;i<5;i++) {
+          stars += '<img src="'+image+'" height="50" onclick="toto('+i+');">';
+      }
+      document.getElementById("stars").innerHTML=stars;
+      }
+          </script>
+   </head>
+   
+   <body>
+       <div id="stars">
+           
+           </div>
+       
+       <script type = "text/javascript" >
+           let whitestars = "";
+           for (let i=0;i<5;i++) {
+               whitestars += '<img src="whitestar.png" height="50" onclick="toto('+i+');">';
+           }
+           //alert(whitestars);
+           document.getElementById("stars").innerHTML=whitestars;
+            </script>
+
+   </body>
+</html>
+
+

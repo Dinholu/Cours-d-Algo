@@ -1,0 +1,32 @@
+<html>
+   
+   <head>   
+      <script type = "text/javascript">  
+         function changeImage1() {
+               //let htmlImage1 = '<img src="yellowstar.png" height="50" id="image1 onclick="changeImage1();">';
+               //let htmlImage2 = '<img src="whitestar.png" height="50" id="image2" onclick="changeImage2();">';
+               //document.getElementById("stars").innerHTML=htmlImage1+htmlImage2 ;
+               document.getElementById("image1").src = "yellowstar.png";
+               document.getElementById("image2").src = "whitestar.png";
+         }
+         function changeImage2() {
+               //let htmlImage1 = '<img src="yellowstar.png" height="50" id="image1" onclick="changeImage1();">';
+               //let htmlImage2 = '<img src="yellowstar.png" height="50" id="image2" onclick="changeImage2();">';
+               //document.getElementById("stars").innerHTML=htmlImage1+htmlImage2 ;
+               document.getElementById("image1").src = "yellowstar.png";
+               document.getElementById("image2").src = "yellowstar.png";
+         }
+      </script>
+   </head>
+   
+   <body>
+      <div id="stars">
+       <img src="whitestar.png" height="50" id="image1"
+       onclick="changeImage1();">
+       <img src="whitestar.png" height="50" id="image2"
+       onclick="changeImage2();">
+      </div>
+   </body>
+</html>
+
+
